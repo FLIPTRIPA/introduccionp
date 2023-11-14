@@ -1,23 +1,32 @@
-from operaciones import caracter_a_ascii, ascii_a_binario, generar_representacion_byte
+# Archivo menu.py
+
+
+def mostrar_menu():
+    print("Menú:")
+    print("1. Generar la representación en byte de un carácter")
+    print("2. Generar la representación en byte de una palabra")
+    print("3. Salir")
+
+def opcion_caracter():
+    caracter = input("Ingrese un carácter: ")
+    valor_ascii = caracter_a_ascii(caracter)
+    representacion_binaria = ascii_a_binario(valor_ascii)
+    print(f"La representación en byte de '{caracter}' es: {representacion_binaria}")
+
+def opcion_palabra():
+    palabra = input("Ingrese una palabra: ")
+    representacion_byte = generar_representacion_byte(palabra)
+    print(f"La representación en byte de '{palabra}' es:\n{representacion_byte}")
 
 def menu():
     while True:
-        print("Menú:")
-        print("1. Generar la representación en byte de un carácter")
-        print("2. Generar la representación en byte de una palabra")
-        print("3. Salir")
-
+        mostrar_menu()
         opcion = input("Ingrese su opción (1, 2, o 3): ")
 
         if opcion == "1":
-            caracter = input("Ingrese un carácter: ")
-            valor_ascii = caracter_a_ascii(caracter)
-            representacion_binaria = ascii_a_binario(valor_ascii)
-            print(f"La representación en byte de '{caracter}' es: {representacion_binaria}")
+            opcion_caracter()
         elif opcion == "2":
-            palabra = input("Ingrese una palabra: ")
-            representacion_byte = generar_representacion_byte(palabra)
-            print(f"La representación en byte de '{palabra}' es:\n{representacion_byte}")
+            opcion_palabra()
         elif opcion == "3":
             print("Saliendo del programa. ¡Hasta luego!")
             break
