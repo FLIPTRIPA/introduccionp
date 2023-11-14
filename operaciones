@@ -1,0 +1,11 @@
+def caracter_a_ascii(caracter):
+    return ord(caracter)
+
+def ascii_a_binario(valor_ascii):
+    return bin(valor_ascii)[2:].zfill(8)
+
+def generar_representacion_byte(palabra):
+    representacion_byte = ""
+    for char in palabra:
+        representacion_byte += ascii_a_binario(caracter_a_ascii(char)) + " "
+    return representacion_byte.strip()
