@@ -1,37 +1,38 @@
-#1 ejercicio
-"""print("hola, mundo")
-#2 ejercicio
-mar = "hola, mundo"
-print(mar)"""
 
-#3 ejercicio
-"""nombre=input("como te llamas")
-print("hola "+nombre+"¡")"""
+def caracter_a_byte(caracter):
 
-#4 ejercicio
-"""print(((3+2)/(2*5))**2)"""
+return format(ord(caracter), '08b')
 
-#5 ejercicio 
-"""horas=float(input("que tanto ha trabajado"))
-costo=float(input("el pago es semanal"))
-pago=horas*costo
-print("tu total es:",pago)"""
+def palabra_a_byte(palabra):
 
-#6 ejercicion
-"""n=float(input("entero positivo"))
-suma= n*(n+1)/2
-print("el resultado de la suma del entero:",suma)"""
-#7 ejercicio
-"""kg=input("coloque su peso en kg:")
-estatura=input("coloque su estatura:")
-imc=round(float(kg)/float(estatura)**2,2)
-print("su masa corporal es:",imc)"""
-#9 ejercicio
-"""cantidad= float(input("cantidad que quiere invertir:"))
-interes=float(input("interes acumulado durante el año:"))
-años=float(input("numero de años"))
-print("capital obtenido",cantidad*(interes/100+1)**años)"""
-#10 ejercicio
-muñecas=float(input("cantidad de muñecas"))
-pesO=float(input(muñeca)*75)
-payasos=float(input("cantidad de payasos"))
+representacion_byte = ''
+for letra in palabra:
+representacion_byte += format(ord(letra), '08b') + ' '
+return representacion_byte[:-1]
+
+while True:
+print("\nMenú:")
+print("1. Convertir un carácter a su representación en byte")
+print("2. Convertir una palabra a su representación en byte")
+print("0. Salir")
+
+opcion = input("Ingrese su opción: ")
+
+if opcion == '1':
+caracter = input("Ingrese un carácter: ")
+resultado_byte = caracter_a_byte(caracter)
+print(f"La representación en byte de '{caracter}' es: {resultado_byte}")
+
+elif opcion == '2':
+palabra = input("Ingrese una palabra: ")
+resultado_byte = palabra_a_byte(palabra)
+print(f"La representación en byte de '{palabra}' es:\n{resultado_byte}")
+
+elif opcion == '0':
+print("Saliendo del programa.")
+break
+
+else:
+print("Opción no válida. Por favor, ingrese 1, 2 o 0.")
+
+
