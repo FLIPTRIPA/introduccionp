@@ -1,3 +1,4 @@
+# Archivo operaciones.py
 def caracter_a_ascii(caracter):
     return ord(caracter)
 
