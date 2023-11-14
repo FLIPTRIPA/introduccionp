@@ -1,0 +1,51 @@
+
+# Proyecto Representación en Byte
+
+## Integrantes del Grupo
+- **Santiago Rios** ([UsuarioGitHub1](https://github.com/FLIPTRIPA))
+
+
+## Descripción
+Este proyecto ofrece un programa en Python que genera la representación en byte de un carácter o una palabra, cumpliendo con las especificaciones del enunciado.
+
+## Funcionalidades del Archivo Python
+
+### `char_to_ascii`
+Convierte un carácter a su valor ASCII utilizando la función `ord`.
+
+```python
+char_to_ascii('A')  # Salida: 65`` 
+
+### `ascii_to_binary`
+
+Convierte un valor ASCII a su representación binaria, rellenando con ceros a la izquierda si es necesario.
+
+pythonCopy code
+
+`ascii_to_binary(65)  # Salida: '01000001'` 
+
+### `generate_byte_representation`
+
+Genera la representación en byte de un carácter utilizando las funciones anteriores.
+
+pythonCopy code
+
+`generate_byte_representation('A')  # Salida: '01000001'` 
+
+### `generate_word_representation`
+
+Genera la representación en byte de una palabra concatenando las representaciones de cada carácter.
+
+pythonCopy code
+
+`generate_word_representation('HELLO')  
+# Salida: '01001000 01000101 01001100 01001100 01001111'` 
+
+## Uso del Repositorio
+
+
+### Ejecutar el Programa
+
+bashCopy code
+
+`python programa.py`
